@@ -9,9 +9,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const loggedIn = await getLoggedInUser();
-  const loggedIn = { firstName: 'Denis', lastName: 'Ruparel' }
-
+  const loggedIn = await getLoggedInUser();
+ 
   if(!loggedIn) redirect('/sign-in')
 
   return (
