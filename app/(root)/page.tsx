@@ -15,7 +15,7 @@ const Home = async({ searchParams: { id, page } }: SearchParamProps) => {
       return 'Good Morning, ';
     } else if (currentHour < 18) {
       return 'Good Afternoon, ';
-    } else {
+    } else if (currentHour > 18) {
       return 'Good Evening, ';
     }
   };
