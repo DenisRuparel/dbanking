@@ -22,9 +22,14 @@ const Home = async({ searchParams: { id, page } }: SearchParamProps) => {
 
   const greetingMessage = getTimeBasedGreeting();
 
+  if (!loggedIn) {
+    console.error("Error: No logged-in user found.");
+    return;
+  }
+
   const accounts = await getAccounts({ 
     userId: loggedIn.$id 
-  })
+  });
 
   if(!accounts) return;
   
